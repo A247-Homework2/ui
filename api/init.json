@@ -62,6 +62,12 @@
           "target": "_self"
         },
         {
+          "title": "产品管理",
+          "href": "page/table_product.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
           "title": "表单示例",
           "href": "",
           "icon": "fa fa-calendar",
