@@ -169,7 +169,7 @@
         },
         {
           "title": "产品管理",
-          "href": "page/table_product.html",
+          "href": "page/table.html",
           "icon": "fa fa-file-text",
           "target": "_self"
         },
