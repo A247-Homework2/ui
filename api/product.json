@@ -1,0 +1,49 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 100,
+  "data": [
+    {
+      "id": 10000,
+      "product_name": "可口可乐",
+      "product_type": "汽水",
+      "price": "2.5"
+    },
+    {
+      "id": 10001,
+      "product_name": "百事可乐",
+      "product_type": "汽水",
+      "price": "2.5"
+    },
+    {
+      "id": 10002,
+      "product_name": "崂山可乐",
+      "product_type": "汽水",
+      "price": "2.5"
+    },
+    {
+      "id": 10003,
+      "product_name": "天府可乐",
+      "product_type": "汽水",
+      "price": "2.5"
+    },
+    {
+      "id": 10004,
+      "product_name": "北冰洋",
+      "product_type": "橙味汽水",
+      "price": "6.0"
+    },
+    {
+      "id": 10004,
+      "product_name": "芬达",
+      "product_type": "橙味汽水",
+      "price": "2.5"
+    },
+    {
+      "id": 10004,
+      "product_name": "美年达",
+      "product_type": "橙味汽水",
+      "price": "2.5"
+    }
+  ]
+}

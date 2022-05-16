@@ -1,0 +1,19 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 100,
+  "data": [
+    {
+      "id": 10000,
+      "product_type": "汽水",
+      "price": "2.5",
+      "description": "是一种风靡全球的饮料类型"
+    },
+    {
+      "id": 10001,
+      "product_type": "橙味汽水",
+      "price": "2.5",
+      "description": "是一种风靡全球的饮料类型，还是橙子味哦"
+    }
+  ]
+}
