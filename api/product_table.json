@@ -1,0 +1,31 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": "10000",
+      "productName": "Product 1",
+      "productDescription": "Good Product 1",
+      "productType": "Product Type 1"
+    },
+    {
+      "id": "10001",
+      "productName": "Product 2",
+      "productDescription": "Good Product 2",
+      "productType": "Product Type 2"
+    },
+    {
+      "id": "10002",
+      "productName": "Product 3",
+      "productDescription": "Good Product 3",
+      "productType": "Product Type 3"
+    },
+    {
+      "id": "10003",
+      "productName": "Product 4",
+      "productDescription": "Good Product 4",
+      "productType": "Product Type 4"
+    }
+  ]
+}

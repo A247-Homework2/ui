@@ -19,15 +19,15 @@
                 <form class="layui-form layui-form-pane" action="">
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label">用户名</label>
+                            <label class="layui-form-label">工厂名</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="name" autocomplete="off" class="layui-input">
+                                <input type="text" name="factoryName" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label class="layui-form-label">用户密码</label>
+                            <label class="layui-form-label">工厂主</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="passport" autocomplete="off" class="layui-input">
+                                <input type="text" name="owner" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
@@ -37,9 +37,9 @@
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label class="layui-form-label">用户权限</label>
+                            <label class="layui-form-label">工厂状态</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="state" autocomplete="off" class="layui-input">
+                                <input type="text" name="factoryState" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
@@ -76,7 +76,7 @@
 
         table.render({
             elem: '#currentTableId',
-            url: '../api/admin_user_table.json',
+            url: '../api/factory_owner_table.json',
             toolbar: '#toolbarDemo',
             defaultToolbar: ['filter', 'exports', 'print', {
                 title: '提示',
@@ -86,10 +86,11 @@
             cols: [[
                 {type: "checkbox", width: 50, fixed: "left"},
                 {field: 'id', width: 80, title: 'ID', sort: true},
-                {field: 'name', width: 200, title: '用户名'},
-                {field: 'passport',width: 200,title: '密码'},
+                {field: 'factoryName', width: 200, title: '工厂名'},
+                {field: 'factoryDescription',width: 200,title: '工厂简介'},
+                {field: 'owner',width: 200,title: '工厂主'},
                 {field: 'phone',width: 200, title: '手机'},
-                {field: 'state',width: 200,title:'权限'},
+                {field: 'factoryState',width: 150,title:'工厂状态'},
                 {title: '操作', minWidth: 100, templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
@@ -127,7 +128,7 @@
                 maxmin:true,
                 shadeClose: true,
                 area: ['100%', '100%'],
-                content: '../page_homework/table/admin_user_table_add.html',
+                content: '../page_homework/table/factory_owner_table_add.html',
             });
             $(window).on("resize", function () {
                 layer.full(index);
@@ -159,7 +160,7 @@
                     maxmin:true,
                     shadeClose: true,
                     area: ['100%', '100%'],
-                    content: '../page_homework/table/admin_user_table_edit.html',
+                    content: '../page_homework/table/factory_owner_table_edit.html',
                 });
                 $(window).on("resize", function () {
                     layer.full(index);

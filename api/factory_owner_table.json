@@ -1,0 +1,39 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": 10000,
+      "factoryName": "Factory 1",
+      "factoryDescription": "Factory Description 1",
+      "owner": "Zhang Xiangwen",
+      "phone": "18975425497",
+      "factoryState": "Open"
+    },
+    {
+      "id": 10001,
+      "factoryName": "Factory 2",
+      "factoryDescription": "Factory Description 2",
+      "owner": "Wang Xiangxi",
+      "phone": "18745845101",
+      "factoryState": "Open"
+    },
+    {
+      "id": 10002,
+      "factoryName": "Factory 3",
+      "factoryDescription": "Factory Description 3",
+      "owner": "Mariah Maclachlan",
+      "phone": "13710979748",
+      "factoryState": "Close"
+    },
+    {
+      "id": 10003,
+      "factoryName": "Factory 4",
+      "factoryDescription": "Factory Description 4",
+      "owner": "Zhou Xiangbei",
+      "phone": "18975425487",
+      "factoryState": "Close"
+    }
+  ]
+}

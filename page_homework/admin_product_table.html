@@ -19,27 +19,21 @@
                 <form class="layui-form layui-form-pane" action="">
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label">用户名</label>
+                            <label class="layui-form-label">产品名</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="name" autocomplete="off" class="layui-input">
+                                <input type="text" name="productName" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label class="layui-form-label">用户密码</label>
+                            <label class="layui-form-label">产品描述</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="passport" autocomplete="off" class="layui-input">
+                                <input type="text" name="productDescription" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label class="layui-form-label">用户电话</label>
+                            <label class="layui-form-label">产品类型</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="phone" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-inline">
-                            <label class="layui-form-label">用户权限</label>
-                            <div class="layui-input-inline">
-                                <input type="text" name="state" autocomplete="off" class="layui-input">
+                                <input type="text" name="productType" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-inline">
@@ -76,7 +70,7 @@
 
         table.render({
             elem: '#currentTableId',
-            url: '../api/admin_user_table.json',
+            url: '../api/product_table.json',
             toolbar: '#toolbarDemo',
             defaultToolbar: ['filter', 'exports', 'print', {
                 title: '提示',
@@ -86,10 +80,9 @@
             cols: [[
                 {type: "checkbox", width: 50, fixed: "left"},
                 {field: 'id', width: 80, title: 'ID', sort: true},
-                {field: 'name', width: 200, title: '用户名'},
-                {field: 'passport',width: 200,title: '密码'},
-                {field: 'phone',width: 200, title: '手机'},
-                {field: 'state',width: 200,title:'权限'},
+                {field: 'productName', width: 200, title: '产品名'},
+                {field: 'productDescription',width: 200,title: '产品简介'},
+                {field: 'productType',width: 200,title: '产品类型'},
                 {title: '操作', minWidth: 100, templet: '#currentTableBar', fixed: "right", align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
@@ -127,7 +120,7 @@
                 maxmin:true,
                 shadeClose: true,
                 area: ['100%', '100%'],
-                content: '../page_homework/table/admin_user_table_add.html',
+                content: '../page_homework/table/product_type_table_add.html',
             });
             $(window).on("resize", function () {
                 layer.full(index);
@@ -159,7 +152,7 @@
                     maxmin:true,
                     shadeClose: true,
                     area: ['100%', '100%'],
-                    content: '../page_homework/table/admin_user_table_edit.html',
+                    content: '../page_homework/table/product_type_table_edit.html',
                 });
                 $(window).on("resize", function () {
                     layer.full(index);

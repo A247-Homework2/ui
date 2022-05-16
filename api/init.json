@@ -25,6 +25,12 @@
           "target": "_self"
         },
         {
+          "title": "云工厂管理",
+          "href": "page_homework/admin_factory_table.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
           "title": "菜单管理",
           "href": "page/menu.html",
           "icon": "fa fa-window-maximize",
