@@ -68,6 +68,8 @@
     <script type="text/html" id="currentTableBar">
       <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
       <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
+      <a class="layui-btn layui-btn-xs layui-bg-blue" lay-event="play">启动</a>
+      <a class="layui-btn layui-btn-xs layui-bg-gray layui-btn-disabled" lay-event="pause">暂停</a>
     </script>
 
   </div>
@@ -175,7 +177,17 @@
         });
         return false;
       } else if (obj.event === 'delete') {
-        layer.confirm('真的删除行么', function (index) {
+        layer.confirm('确定删除这个设备吗？', function (index) {
+          obj.del();
+          layer.close(index);
+        });
+      } else if (obj.event === 'play') {
+        layer.confirm('启动成功', function (index) {
+          obj.del();
+          layer.close(index);
+        });
+      } else if (obj.event === 'pause') {
+        layer.confirm('当前不能暂停', function (index) {
           obj.del();
           layer.close(index);
         });

@@ -1,0 +1,146 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 14,
+  "data": [
+    {
+      "Id": 1,
+      "EquipmentName": "equipment1",
+      "Factory": "factory1",
+      "Owner": "user1",
+      "Status": "Working",
+      "End-time": "2022-5-12",
+      "ProductionSpeed(1-100)": 24,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 2,
+      "EquipmentName": "equipment2",
+      "Factory": "factory2",
+      "Owner": "user1",
+      "Status": "Working",
+      "End-time": "2022-5-13",
+      "ProductionSpeed(1-100)": 28,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 3,
+      "EquipmentName": "equipment3",
+      "Factory": "factory1",
+      "Owner": "user3",
+      "Status": "Working",
+      "End-time": "2022-5-10",
+      "ProductionSpeed(1-100)": 55,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 4,
+      "EquipmentName": "equipment4",
+      "Factory": "factory1",
+      "Owner": "user2",
+      "Status": "Available",
+      "End-time": "----",
+      "ProductionSpeed(1-100)": 43,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 5,
+      "EquipmentName": "equipment5",
+      "Factory": "factory1",
+      "Owner": "user1",
+      "Status": "Working",
+      "End-time": "2022-5-10",
+      "ProductionSpeed(1-100)": 43,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 6,
+      "EquipmentName": "equipment6",
+      "Factory": "factory4",
+      "Owner": "user1",
+      "Status": "Working",
+      "End-time": "2022-5-18",
+      "ProductionSpeed(1-100)": 29,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 7,
+      "EquipmentName": "equipment7",
+      "Factory": "factory4",
+      "Owner": "user6",
+      "Status": "Available",
+      "End-time": "----",
+      "ProductionSpeed(1-100)": 85,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 8,
+      "EquipmentName": "equipment8",
+      "Factory": "factory5",
+      "Owner": "user5",
+      "Status": "Available",
+      "End-time": "----",
+      "ProductionSpeed(1-100)": 10,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 9,
+      "EquipmentName": "equipment9",
+      "Factory": "factory1",
+      "Owner": "user3",
+      "Status": "Available",
+      "End-time": "----",
+      "ProductionSpeed(1-100)": 68,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },    {
+      "Id": 10,
+      "EquipmentName": "equipment10",
+      "Factory": "factory1",
+      "Owner": "user3",
+      "Status": "Working",
+      "End-time": "2022-5-10",
+      "ProductionSpeed(1-100)": 55,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 11,
+      "EquipmentName": "equipment11",
+      "Factory": "factory5",
+      "Owner": "user2",
+      "Status": "Working",
+      "End-time": "2022-6-01",
+      "ProductionSpeed(1-100)": 55,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 12,
+      "EquipmentName": "equipment12",
+      "Factory": "factory1",
+      "Owner": "user5",
+      "Status": "Available",
+      "End-time": "----",
+      "ProductionSpeed(1-100)": 82,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 13,
+      "EquipmentName": "equipment13",
+      "Factory": "factory4",
+      "Owner": "user2",
+      "Status": "Working",
+      "End-time": "2022-5-21",
+      "ProductionSpeed(1-100)": 68,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    },
+    {
+      "Id": 14,
+      "EquipmentName": "equipment14",
+      "Factory": "factory4",
+      "Owner": "user2",
+      "Status": "Working",
+      "End-time": "2022-5-19",
+      "ProductionSpeed(1-100)": 84,
+      "EquipmentDescription": "This equipment is used to produce the thing that we need"
+    }
+  ]
+}
