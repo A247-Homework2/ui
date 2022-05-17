@@ -21,7 +21,7 @@
         {
           "title": "云工厂人员管理",
           "href": "page_homework/admin_user_table.html",
-          "icon": "fa fa-file-text",
+          "icon": "fa fa-street-view",
           "target": "_self"
         },
         {
@@ -39,13 +39,13 @@
             {
               "title": "产品管理",
               "href": "page/table_product.html",
-              "icon": "fa fa-file-text",
+              "icon": "fa fa-send",
               "target": "_self"
             },
             {
               "title": "产品类型管理",
               "href": "page/table_product_type.html",
-              "icon": "fa fa-file-text",
+              "icon": "fa fa-send-o",
               "target": "_self"
             }
           ]
