@@ -25,9 +25,13 @@
               </div>
             </div>
             <div class="layui-inline">
-              <label class="layui-form-label">排产状态</label>
+              <label class="layui-form-label required">排产状态</label>
               <div class="layui-input-inline">
-                <input type="text" name="state" autocomplete="off" class="layui-input">
+                <select name="modules" lay-verify="required" lay-search="">
+                  <option value="">选择排产状态</option>
+                  <option value="1">working</option>
+                  <option value="2">Not Start</option>
+                </select>
               </div>
             </div>
             <div class="layui-inline">
@@ -53,7 +57,7 @@
     <script type="text/html" id="toolbarDemo">
       <div class="layui-btn-container">
         <button class="layui-btn layui-btn-sm data-add-btn"> 添加排产 </button>
-        <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn layui-btn-disabled" event="sayno"> 删除排产 </button>
+        <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn" event="sayno"> 删除排产 </button>
       </div>
     </script>
 
@@ -89,11 +93,23 @@
         {field: 'Id', width: 110, title: '排产ID', align: "center"},
         {field: 'PlanName', width: 130, title: '排产名', sort: true, align: "center"},
         {field: 'Status', title: '排产状态', width: 130, sort: true, align: "center"},
-        {field: 'End-time', width: 130, title: '要求完成时间', sort: true, align: "center"},
+        {field: 'Time', width: 130, title: '要求完成时间', sort: true, align: "center"},
         {field: 'Equipment', width: 130, title: '生产设备', sort: true, align: "center"},
         {field: 'PlanDescription', minWidth: 400, title: '排产描述', align: "center"},
         {title: '操作', width: 220, templet: '#currentTableBar', fixed: "right", align: "center"}
       ]],
+      // done: function (response) {
+      //   //定位当前table视图
+      //   var tableView = this.elem.next();
+      //   //response.data获取后端返回的JSON格式数据
+      //   $.each(response.data,function (index,item) {
+      //     //逻辑判断
+      //     if(item.status == "1"){
+      //       //改变TR标签内字体颜色
+      //       tableView.find('tbody tr[data-index="'+ index +'"]').css('color','red');
+      //     }
+      //   })
+      // },
       limits: [10, 15, 20, 25, 50, 100],
       limit: 15,
       page: true
@@ -140,7 +156,7 @@
 
     // 监听删除操作
     $(".data-delete-btn").on("click", function () {
-      layer.alert('你没有权限', function (index) {
+      layer.alert('该排产还未结束，只有历史排产才可以删除。', function (index) {
         layer.close(index);
       });
     });
