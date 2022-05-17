@@ -213,10 +213,24 @@
           "target": "_self"
         },
         {
-          "title": "设备管理",
-          "href": "page_homework/equipment_table.html",
-          "icon": "fa fa-file-text",
-          "target": "_self"
+          "title": "设备",
+          "href": "",
+          "icon": "fa fa-flask",
+          "target": "_self",
+          "child": [
+            {
+              "title": "设备类型管理",
+              "href": "page_homework/equipment_type_table.html",
+              "icon": "fa fa-send-o",
+              "target": "_self"
+            },
+            {
+              "title": "设备管理",
+              "href": "page_homework/equipment_table.html",
+              "icon": "fa fa-send",
+              "target": "_self"
+            }
+          ]
         },
         {
           "title": "排产管理",
