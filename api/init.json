@@ -201,28 +201,26 @@
       "icon": "fa fa-address-book",
       "child": [
         {
-          "title": "产品",
-          "href": "",
-          "icon": "fa fa-flask",
-          "target": "_self",
-          "child": [
-            {
-              "title": "产品管理",
-              "href": "page/table_product.html",
-              "icon": "fa fa-file-text",
-              "target": "_self"
-            },
-            {
-              "title": "产品类型管理",
-              "href": "page/table_product_type.html",
-              "icon": "fa fa-file-text",
-              "target": "_self"
-            }
-          ]
+          "title": "主页",
+          "href": "page/welcome-2.html",
+          "icon": "fa fa-tachometer",
+          "target": "_self"
         },
         {
-          "title": "订单管理",
-          "href": "page/table_order_fac.html",
+          "title": "云工厂管理",
+          "href": "page_homework/admin_factory_table.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "设备管理",
+          "href": "page_homework/equipment_table.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "排产管理",
+          "href": "page_homework/plan_table.html",
           "icon": "fa fa-file-text",
           "target": "_self"
         }
