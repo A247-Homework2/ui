@@ -156,13 +156,13 @@
       if (obj.event === 'edit') {
 
         var index = layer.open({
-          title: '编辑用户',
+          title: '编辑订单',
           type: 2,
           shade: 0.2,
           maxmin:true,
           shadeClose: true,
           area: ['100%', '100%'],
-          content: 'table/edit.html',
+          content: 'table/edit_order.html',
         });
         $(window).on("resize", function () {
           layer.full(index);

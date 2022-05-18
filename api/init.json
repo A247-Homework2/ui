@@ -115,8 +115,34 @@
           ]
         },
         {
+          "title": "产品",
+          "href": "",
+          "icon": "fa fa-flask",
+          "target": "_self",
+          "child": [
+            {
+              "title": "产品类型管理",
+              "href": "page/table_product_type.html",
+              "icon": "fa fa-send-o",
+              "target": "_self"
+            },
+            {
+              "title": "产品管理",
+              "href": "page/table_product.html",
+              "icon": "fa fa-send",
+              "target": "_self"
+            }
+          ]
+        },
+        {
           "title": "排产管理",
           "href": "page_homework/plan_table.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "订单管理",
+          "href": "page/table_order_fac.html",
           "icon": "fa fa-file-text",
           "target": "_self"
         }
