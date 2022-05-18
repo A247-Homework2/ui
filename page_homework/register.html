@@ -10,11 +10,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/public.css" media="all">
     <!--[if lt IE 9]>
-    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+     <![endif]-->
     <style>
         .main-body {top:50%;left:50%;position:absolute;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%);overflow:hidden;}
         .login-main .login-bottom .center .item input {display:inline-block;width:227px;height:22px;padding:0;position:absolute;border:0;outline:0;font-size:14px;letter-spacing:0;}
@@ -28,6 +27,7 @@
         .login-main .login-bottom .tip .icon-check {margin:0 7px 0 0;width:14px;height:14px;border:none;background:url(../images/icon-login.png) no-repeat -111px -48px;}
         .login-main .login-bottom .center .item .icon {display:inline-block;width:33px;height:22px;}
         .login-main .login-bottom .center .item {width:288px;height:35px;border-bottom:1px solid #dae1e6;margin-bottom:35px;}
+        .login-main .login-bottom .center .item2 {width:288px;height:35px;margin-bottom:35px;}
         .login-main {width:428px;position:relative;float:left;}
         .login-main .login-top {height:117px;background-color:#148be4;border-radius:12px 12px 0 0;font-family:SourceHanSansCN-Regular;font-size:30px;font-weight:400;font-stretch:normal;letter-spacing:0;color:#fff;line-height:117px;text-align:center;overflow:hidden;-webkit-transform:rotate(0);-moz-transform:rotate(0);-ms-transform:rotate(0);-o-transform:rotate(0);transform:rotate(0);}
         .login-main .login-top .bg1 {display:inline-block;width:74px;height:74px;background:#fff;opacity:.1;border-radius:0 74px 0 0;position:absolute;left:0;top:43px;}
@@ -64,7 +64,7 @@
             <span class="bg1"></span>
             <span class="bg2"></span>
         </div>
-        <form class="layui-form login-bottom">
+        <form class="layui-form layui-form-pane login-bottom" action="">
             <div class="center">
                 <div class="item">
                     <span class="icon icon-2"></span>
@@ -83,13 +83,14 @@
                     <span class="icon icon-1"></span>
                     <input type="text" name="email"  placeholder="请输入相应邮箱" maxlength="24"/>
                 </div>
-                <div class="item">
-                    <span class="icon icon-1"></span>
-                    <input type="radio" name="state" value="factory_owner" title="云工厂管理员" checked="">
-                    <input type="radio" name="state" value="trader" title="经销商">
-                </div>
+                <div class="item2" >
+                   
+                        <input type="radio" name="state" value="云工厂管理员" title="云工厂管理员" checked="">
+                        <input type="radio" name="state" value="经销商" title="经销商">
 
+                </div>
             </div>
+
 
             <div class="tip">
                 <span class="icon-nocheck"></span>
@@ -103,7 +104,7 @@
     </div>
 </div>
 
-<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script src="../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
 <script>
     layui.use(['form','jquery'], function () {
         var $ = layui.jquery,
@@ -151,6 +152,7 @@
             });
             return false;
         });
+        form.render();
     });
 </script>
 </body>

@@ -8,6 +8,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="../lib/layui-v2.5.5/css/layui.css" media="all">
   <link rel="stylesheet" href="../css/public.css" media="all">
+  <style>
+    .tooltip {
+      position: relative;
+      border-bottom: 1px dotted black;
+    }
+    .tooltip::before{
+      content: attr(tooltip-data);
+      background-color: #fff;
+      width: 50px;
+      min-height: 8px;
+      position: absolute;
+      bottom: -15px;
+      display: flex;
+      left: -25px;
+      padding: 8px 53%;
+      opacity: 0;
+      justify-content: center;
+      transition: opacity .5s;
+      align-items: center;
+      border: 1px solid #dedede;
+      border-radius: 5px;
+      visibility: visible;
+    }
+    .tooltip:after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      opacity: 0;
+      transition: opacity .5s;
+      border-color: #000 transparent transparent transparent;
+      visibility: visible;
+    }
+    .tooltip:hover::before,.tooltip:hover::after{
+      opacity: 1;
+      visibility: visible
+    }
+  </style>
 </head>
 <body>
 <div class="layuimini-container">
@@ -25,9 +66,13 @@
               </div>
             </div>
             <div class="layui-inline">
-              <label class="layui-form-label">排产状态</label>
+              <label class="layui-form-label required">排产状态</label>
               <div class="layui-input-inline">
-                <input type="text" name="state" autocomplete="off" class="layui-input">
+                <select name="modules" lay-verify="required" lay-search="">
+                  <option value="">选择排产状态</option>
+                  <option value="1">working</option>
+                  <option value="2">Not Start</option>
+                </select>
               </div>
             </div>
             <div class="layui-inline">
@@ -53,15 +98,16 @@
     <script type="text/html" id="toolbarDemo">
       <div class="layui-btn-container">
         <button class="layui-btn layui-btn-sm data-add-btn"> 添加排产 </button>
-        <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn"> 删除排产 </button>
+        <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn" event="sayno"> 删除排产 </button>
       </div>
     </script>
 
     <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
 
     <script type="text/html" id="currentTableBar">
-      <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
-      <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
+      <a class="layui-btn layui-btn-xs data-count-edit layui-btn-disabled" lay-event="edit">编辑</a>
+      <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">申请拒单</a>
+      <a class="layui-btn layui-btn-xs layui-bg-blue" lay-event="play">安排设备</a>
     </script>
 
   </div>
@@ -88,7 +134,7 @@
         {field: 'Id', width: 110, title: '排产ID', align: "center"},
         {field: 'PlanName', width: 130, title: '排产名', sort: true, align: "center"},
         {field: 'Status', title: '排产状态', width: 130, sort: true, align: "center"},
-        {field: 'End-time', width: 130, title: '要求完成时间', sort: true, align: "center"},
+        {field: 'Time', width: 130, title: '要求完成时间', sort: true, align: "center", templet: "#titleTime"},
         {field: 'Equipment', width: 130, title: '生产设备', sort: true, align: "center"},
         {field: 'PlanDescription', minWidth: 400, title: '排产描述', align: "center"},
         {title: '操作', width: 220, templet: '#currentTableBar', fixed: "right", align: "center"}
@@ -127,11 +173,12 @@
         shade: 0.2,
         maxmin:true,
         shadeClose: true,
-        area: ['100%', '100%'],
-        content: '../page_homework/table/admin_user_table_add.html',
+        area: ['800px', '600px'],
+        content: '../page_homework/table/plan_table_add.html',
       });
       $(window).on("resize", function () {
-        layer.full(index);
+        layer.open(index);
+
       });
 
       return false;
@@ -139,9 +186,9 @@
 
     // 监听删除操作
     $(".data-delete-btn").on("click", function () {
-      var checkStatus = table.checkStatus('currentTableId')
-              , data = checkStatus.data;
-      layer.alert(JSON.stringify(data));
+      layer.alert('该排产还未结束，只有历史排产才可以删除。', function (index) {
+        layer.close(index);
+      });
     });
 
     //监听表格复选框选择
@@ -152,32 +199,38 @@
     table.on('tool(currentTableFilter)', function (obj) {
       var data = obj.data;
       if (obj.event === 'edit') {
-
+        layer.alert('你没有权限', function (index) {
+          layer.close(index); });
+      } else if (obj.event === 'delete') {
+        layer.msg('已提交申请，请等待管理员回应', function (index) {
+          layer.close(index);
+        });
+      }else if (obj.event === 'play') {
         var index = layer.open({
-          title: '编辑排产',
+          title: '安排设备',
           type: 2,
           shade: 0.2,
           maxmin:true,
           shadeClose: true,
-          area: ['100%', '100%'],
-          content: '../page_homework/table/admin_user_table_edit.html',
+          area: ['800px', '600px'],
+          content: '../page_homework/table/equipment_required.html',
         });
         $(window).on("resize", function () {
-          layer.full(index);
-        });
-        return false;
-      } else if (obj.event === 'delete') {
-        layer.confirm('真的删除行么', function (index) {
-          obj.del();
-          layer.close(index);
         });
       }
     });
 
   });
 </script>
-<script>
+<script type="text/html" id="titleTime">
+  {{#  if(d.Time == '2022-5-22'){ }}
+  <span class = "tooltip" tooltip-data="要截止" style="color: #FF5722;">{{ d.Time }}</span>
+  {{#  } else if (d.Time == '2022-5-20'){ }}
+  <span class = "tooltip" tooltip-data="要截止" style="color: #FF5722;">{{ d.Time }}</span>
 
+  {{#  } else { }}
+  <span style="color: #000000;">{{ d.Time }}</span>
+  {{#  } }}
 </script>
 
 </body>
