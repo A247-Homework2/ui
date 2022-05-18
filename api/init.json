@@ -90,7 +90,7 @@
         },
         {
           "title": "云工厂管理",
-          "href": "page_homework/admin_factory_table.html",
+          "href": "page_homework/factory2_table.html",
           "icon": "fa fa-file-text",
           "target": "_self"
         },
