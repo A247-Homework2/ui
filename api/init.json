@@ -13,10 +13,23 @@
     "href": ""
   },
   "menuInfo": {
-    "currency_3": {
-      "title": "工厂主",
+    "currency": {
+      "title": "管理员",
       "icon": "fa fa-address-book",
+      "href": "page_homework/admin-welcome",
       "child": [
+        {
+          "title": "人员管理",
+          "href": "page_homework/admin_user_table.html",
+          "icon": "fa fa-street-view",
+          "target": "_self"
+        },
+        {
+          "title": "云工厂管理",
+          "href": "page_homework/admin_factory_table.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
         {
           "title": "产品",
           "href": "",
@@ -26,20 +39,96 @@
             {
               "title": "产品管理",
               "href": "page/table_product.html",
-              "icon": "fa fa-file-text",
+              "icon": "fa fa-send",
               "target": "_self"
             },
             {
               "title": "产品类型管理",
               "href": "page/table_product_type.html",
-              "icon": "fa fa-file-text",
+              "icon": "fa fa-send-o",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "设备",
+          "href": "",
+          "icon": "fa fa-flask",
+          "target": "_self",
+          "child": [
+            {
+              "title": "设备类型管理",
+              "href": "page_homework/equipment_type_table.html",
+              "icon": "fa fa-send-o",
+              "target": "_self"
+            },
+            {
+              "title": "设备管理",
+              "href": "page_homework/equipment_table.html",
+              "icon": "fa fa-send",
               "target": "_self"
             }
           ]
         },
         {
           "title": "订单管理",
-          "href": "page/table_order_fac.html",
+          "href": "page/table_order.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        }
+      ]
+    },
+    "currency_3": {
+      "title": "工厂主",
+      "icon": "fa fa-address-book",
+      "child": [
+        {
+          "title": "主页",
+          "href": "page/welcome-equipment.html",
+          "icon": "fa fa-tachometer",
+          "target": "_self"
+        },
+        {
+          "title": "云工厂管理",
+          "href": "page_homework/factory2_table.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "设备",
+          "href": "",
+          "icon": "fa fa-flask",
+          "target": "_self",
+          "child": [
+            {
+              "title": "设备类型管理",
+              "href": "page_homework/equipment_type_table.html",
+              "icon": "fa fa-send-o",
+              "target": "_self"
+            },
+            {
+              "title": "设备管理",
+              "href": "page_homework/equipment_table.html",
+              "icon": "fa fa-send",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "排产管理",
+          "href": "page_homework/plan_table.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        }
+      ]
+    },
+    "currency_4": {
+      "title": "经销商",
+      "icon": "fa fa-address-book",
+      "child": [
+        {
+          "title": "订单管理",
+          "href": "page/table_order.html",
           "icon": "fa fa-file-text",
           "target": "_self"
         }
