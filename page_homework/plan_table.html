@@ -8,6 +8,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="../lib/layui-v2.5.5/css/layui.css" media="all">
   <link rel="stylesheet" href="../css/public.css" media="all">
+  <style>
+    .tooltip {
+      position: relative;
+      border-bottom: 1px dotted black;
+    }
+    .tooltip::before{
+      content: attr(tooltip-data);
+      background-color: #fff;
+      width: 50px;
+      min-height: 8px;
+      position: absolute;
+      bottom: -15px;
+      display: flex;
+      left: -25px;
+      padding: 8px 53%;
+      opacity: 0;
+      justify-content: center;
+      transition: opacity .5s;
+      align-items: center;
+      border: 1px solid #dedede;
+      border-radius: 5px;
+      visibility: visible;
+    }
+    .tooltip:after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      opacity: 0;
+      transition: opacity .5s;
+      border-color: #000 transparent transparent transparent;
+      visibility: visible;
+    }
+    .tooltip:hover::before,.tooltip:hover::after{
+      opacity: 1;
+      visibility: visible
+    }
+  </style>
 </head>
 <body>
 <div class="layuimini-container">
@@ -93,23 +134,11 @@
         {field: 'Id', width: 110, title: '排产ID', align: "center"},
         {field: 'PlanName', width: 130, title: '排产名', sort: true, align: "center"},
         {field: 'Status', title: '排产状态', width: 130, sort: true, align: "center"},
-        {field: 'Time', width: 130, title: '要求完成时间', sort: true, align: "center"},
+        {field: 'Time', width: 130, title: '要求完成时间', sort: true, align: "center", templet: "#titleTime"},
         {field: 'Equipment', width: 130, title: '生产设备', sort: true, align: "center"},
         {field: 'PlanDescription', minWidth: 400, title: '排产描述', align: "center"},
         {title: '操作', width: 220, templet: '#currentTableBar', fixed: "right", align: "center"}
       ]],
-      // done: function (response) {
-      //   //定位当前table视图
-      //   var tableView = this.elem.next();
-      //   //response.data获取后端返回的JSON格式数据
-      //   $.each(response.data,function (index,item) {
-      //     //逻辑判断
-      //     if(item.status == "1"){
-      //       //改变TR标签内字体颜色
-      //       tableView.find('tbody tr[data-index="'+ index +'"]').css('color','red');
-      //     }
-      //   })
-      // },
       limits: [10, 15, 20, 25, 50, 100],
       limit: 15,
       page: true
@@ -144,11 +173,12 @@
         shade: 0.2,
         maxmin:true,
         shadeClose: true,
-        area: ['100%', '100%'],
+        area: ['800px', '600px'],
         content: '../page_homework/table/plan_table_add.html',
       });
       $(window).on("resize", function () {
-        layer.full(index);
+        layer.open(index);
+
       });
 
       return false;
@@ -175,13 +205,32 @@
         layer.msg('已提交申请，请等待管理员回应', function (index) {
           layer.close(index);
         });
+      }else if (obj.event === 'play') {
+        var index = layer.open({
+          title: '安排设备',
+          type: 2,
+          shade: 0.2,
+          maxmin:true,
+          shadeClose: true,
+          area: ['800px', '600px'],
+          content: '../page_homework/table/equipment_required.html',
+        });
+        $(window).on("resize", function () {
+        });
       }
     });
 
   });
 </script>
-<script>
+<script type="text/html" id="titleTime">
+  {{#  if(d.Time == '2022-5-22'){ }}
+  <span class = "tooltip" tooltip-data="要截止" style="color: #FF5722;">{{ d.Time }}</span>
+  {{#  } else if (d.Time == '2022-5-20'){ }}
+  <span class = "tooltip" tooltip-data="要截止" style="color: #FF5722;">{{ d.Time }}</span>
 
+  {{#  } else { }}
+  <span style="color: #000000;">{{ d.Time }}</span>
+  {{#  } }}
 </script>
 
 </body>

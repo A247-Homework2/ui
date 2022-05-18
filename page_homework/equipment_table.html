@@ -47,9 +47,15 @@
               </div>
             </div>
             <div class="layui-inline">
-              <label class="layui-form-label">生产速度</label>
-              <div class="layui-input-inline">
-                <input type="text" name="state" autocomplete="off" class="layui-input">
+              <div class="layui-inline">
+                <label class="layui-form-label">生产速度</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                  <input type="text" name="price_min" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid">-</div>
+                <div class="layui-input-inline" style="width: 100px;">
+                  <input type="text" name="price_max" autocomplete="off" class="layui-input">
+                </div>
               </div>
             </div>
             <div class="layui-inline">
@@ -69,12 +75,6 @@
 
     <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
 
-    <script type="text/html" id="currentTableBar">
-      <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
-      <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
-      <a class="layui-btn layui-btn-xs layui-bg-blue" lay-event="play">启动</a>
-      <a class="layui-btn layui-btn-xs layui-bg-gray layui-btn-disabled" lay-event="pause">暂停</a>
-    </script>
 
   </div>
 </div>
@@ -105,7 +105,7 @@
         {field: 'End-time', width: 130, title: '预计完成时间', sort: true, align: "center"},
         {field: 'ProductionSpeed(1-100)', width: 180, title: '生产速度（1-100）', sort: true, align: "center"},
         {field: 'EquipmentDescription', minWidth: 400, title: '设备描述', align: "center"},
-        {title: '操作', width: 220, templet: '#currentTableBar', fixed: "right", align: "center"}
+        {title: '操作', width: 220,  fixed: "right", align: "center", templet: '#titleOp',}
       ]],
       limits: [10, 15, 20, 25, 50, 100],
       limit: 15,
@@ -141,7 +141,7 @@
         shade: 0.2,
         maxmin:true,
         shadeClose: true,
-        area: ['100%', '100%'],
+        area: ['800px', '600px'],
         content: '../page_homework/table/equipment_table_add.html',
       });
       $(window).on("resize", function () {
@@ -173,7 +173,7 @@
           shade: 0.2,
           maxmin:true,
           shadeClose: true,
-          area: ['100%', '100%'],
+          area: ['800px', '600px'],
           content: '../page_homework/table/equipment_table_edit.html',
         });
         $(window).on("resize", function () {
@@ -186,12 +186,12 @@
           layer.close(index);
         });
       } else if (obj.event === 'play') {
-        layer.confirm('启动成功', function (index) {
+        layer.alert('启动成功', function (index) {
           obj.del();
           layer.close(index);
         });
       } else if (obj.event === 'pause') {
-        layer.confirm('当前不能暂停', function (index) {
+        layer.alert('暂停成功', function (index) {
           obj.del();
           layer.close(index);
         });
@@ -200,8 +200,18 @@
 
   });
 </script>
-<script>
-
+<script type="text/html" id="titleOp">
+  {{#  if(d.Status == 'Working'){ }}
+  <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
+  <a class="layui-btn layui-btn-xs layui-bg-blue layui-btn-disabled" >启动</a>
+  <a class="layui-btn layui-btn-xs layui-bg-gray" lay-event="pause">暂停</a>
+  {{#  } else { }}
+  <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
+  <a class="layui-btn layui-btn-xs layui-bg-blue" lay-event="play">启动</a>
+  <a class="layui-btn layui-btn-xs layui-bg-gray layui-btn-disabled" >暂停</a>
+  {{#  } }}
 </script>
 
 </body>
