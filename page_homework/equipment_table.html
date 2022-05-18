@@ -187,12 +187,10 @@
         });
       } else if (obj.event === 'play') {
         layer.alert('启动成功', function (index) {
-          obj.del();
           layer.close(index);
         });
       } else if (obj.event === 'pause') {
         layer.alert('暂停成功', function (index) {
-          obj.del();
           layer.close(index);
         });
       }
