@@ -84,7 +84,7 @@
       "child": [
         {
           "title": "主页",
-          "href": "page/welcome-2.html",
+          "href": "page/welcome-equipment.html",
           "icon": "fa fa-tachometer",
           "target": "_self"
         },
